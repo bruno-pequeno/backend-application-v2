@@ -1,9 +1,9 @@
 package com.unlockway.backendapplication.services;
 
-import com.unlockway.backendapplication.dto.CreateFoodDTO;
-import com.unlockway.backendapplication.dto.FoodDTO;
-import com.unlockway.backendapplication.repositories.FoodRepository;
-import com.unlockway.backendapplication.models.FoodModel;
+import com.unlockway.backendapplication.api.dto.CreateFoodDTO;
+import com.unlockway.backendapplication.api.dto.FoodDTO;
+import com.unlockway.backendapplication.domain.repositories.FoodRepository;
+import com.unlockway.backendapplication.domain.models.FoodModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

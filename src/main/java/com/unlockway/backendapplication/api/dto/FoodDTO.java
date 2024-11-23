@@ -1,7 +1,7 @@
-package com.unlockway.backendapplication.dto;
+package com.unlockway.backendapplication.api.dto;
 
-import com.unlockway.backendapplication.enums.Measure;
-import com.unlockway.backendapplication.models.FoodModel;
+import com.unlockway.backendapplication.domain.enums.Measure;
+import com.unlockway.backendapplication.domain.models.FoodModel;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 

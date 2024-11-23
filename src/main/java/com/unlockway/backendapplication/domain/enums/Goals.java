@@ -1,4 +1,4 @@
-package com.unlockway.backendapplication.enums;
+package com.unlockway.backendapplication.domain.enums;
 
 public enum Goals {
     GAIN_MUSCULAR_MASS,

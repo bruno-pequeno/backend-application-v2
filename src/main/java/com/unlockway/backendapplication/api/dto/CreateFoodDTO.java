@@ -1,6 +1,6 @@
-package com.unlockway.backendapplication.dto;
+package com.unlockway.backendapplication.api.dto;
 
-import com.unlockway.backendapplication.enums.Measure;
+import com.unlockway.backendapplication.domain.enums.Measure;
 import lombok.Data;
 
 @Data

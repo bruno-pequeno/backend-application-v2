@@ -1,7 +1,7 @@
-package com.unlockway.backendapplication.models;
+package com.unlockway.backendapplication.domain.models;
 
-import com.unlockway.backendapplication.enums.Biotype;
-import com.unlockway.backendapplication.enums.Goals;
+import com.unlockway.backendapplication.domain.enums.Biotype;
+import com.unlockway.backendapplication.domain.enums.Goals;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

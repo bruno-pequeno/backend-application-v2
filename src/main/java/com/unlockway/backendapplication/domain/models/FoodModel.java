@@ -1,6 +1,6 @@
-package com.unlockway.backendapplication.models;
+package com.unlockway.backendapplication.domain.models;
 
-import com.unlockway.backendapplication.enums.Measure;
+import com.unlockway.backendapplication.domain.enums.Measure;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

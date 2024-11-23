@@ -1,6 +1,6 @@
-package com.unlockway.backendapplication.repositories;
+package com.unlockway.backendapplication.domain.repositories;
 
-import com.unlockway.backendapplication.models.FoodModel;
+import com.unlockway.backendapplication.domain.models.FoodModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

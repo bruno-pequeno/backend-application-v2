@@ -1,7 +1,7 @@
-package com.unlockway.backendapplication.dto;
+package com.unlockway.backendapplication.api.dto;
 
-import com.unlockway.backendapplication.models.UserModel;
-import com.unlockway.backendapplication.enums.Goals;
+import com.unlockway.backendapplication.domain.models.UserModel;
+import com.unlockway.backendapplication.domain.enums.Goals;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
