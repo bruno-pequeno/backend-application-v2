@@ -3,7 +3,8 @@ package com.unlockway.backendapplication.services;
 import com.unlockway.backendapplication.dto.CreateUserDTO;
 import com.unlockway.backendapplication.dto.UserDTO;
 import com.unlockway.backendapplication.repositories.UserRepository;
-import com.unlockway.backendapplication.UserModel;
+import com.unlockway.backendapplication.models.UserModel;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
-    @Autowired
-    UserRepository userRepository;
+
+    private final UserRepository userRepository;
 
     @Transactional(readOnly = true)
     public List<UserDTO> findAll(){

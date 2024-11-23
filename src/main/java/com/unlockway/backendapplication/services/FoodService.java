@@ -2,19 +2,19 @@ package com.unlockway.backendapplication.services;
 
 import com.unlockway.backendapplication.dto.CreateFoodDTO;
 import com.unlockway.backendapplication.dto.FoodDTO;
-import com.unlockway.backendapplication.enums.Measure;
 import com.unlockway.backendapplication.repositories.FoodRepository;
-import com.unlockway.backendapplication.FoodModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.unlockway.backendapplication.models.FoodModel;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class FoodService {
-    @Autowired
-    FoodRepository foodRepository;
+
+    private final FoodRepository foodRepository;
 
     @Transactional(readOnly = true)
     public List<FoodDTO> findAll(){
