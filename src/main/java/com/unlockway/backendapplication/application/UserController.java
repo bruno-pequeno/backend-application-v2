@@ -3,33 +3,31 @@ package com.unlockway.backendapplication.application;
 import com.unlockway.backendapplication.api.dto.CreateUserDTO;
 import com.unlockway.backendapplication.api.dto.UserDTO;
 import com.unlockway.backendapplication.services.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/user")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
-    @GetMapping(value = "/data")
+    @GetMapping(value = "")
     public List<UserDTO> findAll(){
-        List<UserDTO> result = userService.findAll();
-
-        return result;
+        return userService.findAll();
     }
+
     @GetMapping(value = "/{id}")
     public List<UserDTO> findById(@PathVariable int id){
-        List<UserDTO> result = userService.findById(id);
-
-        return result;
+        return userService.findById(id);
     }
-    @PostMapping(value = "/create")
+
+    @PostMapping(value = "")
     public UserDTO createUser(@RequestBody CreateUserDTO createUserDTO) {
-        UserDTO createdUser = userService.createUser(createUserDTO);
-        return createdUser;
+        return userService.createUser(createUserDTO);
     }
 }

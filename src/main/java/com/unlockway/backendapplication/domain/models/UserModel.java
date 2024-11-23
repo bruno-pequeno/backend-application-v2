@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "tb_users")
 public class UserModel {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_User")
     private int id;
 
     @Column(name = "first_name")
