@@ -15,6 +15,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordService hashPassword;
 
     @Transactional(readOnly = true)
     public List<UserDTO> findAll(){
@@ -31,16 +32,20 @@ public class UserService {
     @Transactional(readOnly = true)
     public UserDTO createUser(CreateUserDTO createUserDTO) {
         UserModel newUser = new UserModel();
+
         newUser.setFirstName(createUserDTO.getFirstName());
         newUser.setLastName(createUserDTO.getLastName());
-        newUser.setPassword(createUserDTO.getPassword());
+
+        String hashedPassword = hashPassword.hashPassword(createUserDTO.getPassword());
+        newUser.setPassword(hashedPassword);
+
         newUser.setEmail(createUserDTO.getEmail());
         newUser.setHeight(createUserDTO.getHeight());
         newUser.setWeight(createUserDTO.getWeight());
         newUser.setGoals(createUserDTO.getGoals());
+        newUser.setBiotype(createUserDTO.getBiotype());
 
         UserModel savedUserModel = userRepository.save(newUser);
-
         return new UserDTO(savedUserModel);
     }
 }
