@@ -3,33 +3,29 @@ package com.unlockway.backendapplication.application;
 import com.unlockway.backendapplication.api.dto.CreateFoodDTO;
 import com.unlockway.backendapplication.api.dto.FoodDTO;
 import com.unlockway.backendapplication.services.FoodService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/food")
 public class FoodController {
 
-    @Autowired
-    FoodService foodService;
+    private final FoodService foodService;
 
-    @GetMapping(value = "/data")
+    @GetMapping(value = "")
     public List<FoodDTO> findAll(){
-        List<FoodDTO> result = foodService.findAll();
-
-        return result;
+        return foodService.findAll();
     }
     @GetMapping(value = "/{id}")
     public List<FoodDTO> findById(@PathVariable int id){
-        List<FoodDTO> result = foodService.findById(id);
-
-        return result;
+        return foodService.findById(id);
     }
-    @PostMapping(value = "/create")
+    @PostMapping(value = "")
     public FoodDTO createFood(@RequestBody CreateFoodDTO createFoodDTO) {
-        FoodDTO createdFood = foodService.createFood(createFoodDTO);
-        return createdFood;
+        return foodService.createFood(createFoodDTO);
     }
 }

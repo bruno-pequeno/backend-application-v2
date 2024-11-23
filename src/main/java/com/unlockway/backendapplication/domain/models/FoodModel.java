@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "tb_foods")
 public class FoodModel {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Food")
     private int id;
 
     private String name;
